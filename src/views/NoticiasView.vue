@@ -1,22 +1,31 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
-import { useParoquiaStore } from '@/stores/paroquia'
 import { Icon } from '@iconify/vue'
+import { noticiaService } from '@/services/noticiaService'
+import type { Noticia } from '@/types/noticia'
 import dayjs from 'dayjs'
 import 'dayjs/locale/pt-br'
 
 dayjs.locale('pt-br')
 
-/**
- * Store da paróquia
- */
-const paroquiaStore = useParoquiaStore()
+const noticias = ref<Noticia[]>([])
+const isLoading = ref(true)
 
-/**
- * Notícias disponíveis
- */
-const noticias = computed(() => paroquiaStore.noticias || [])
+onMounted(async () => {
+  try {
+    noticias.value = await noticiaService.getAll()
+    console.log('Notícias carregadas:', noticias.value)
+    console.log('Total de notícias:', noticias.value.length)
+    if (noticias.value.length > 0) {
+      console.log('Primeira notícia:', noticias.value[0])
+    }
+  } catch (error) {
+    console.error('Erro ao carregar notícias:', error)
+  } finally {
+    isLoading.value = false
+  }
+})
 
 /**
  * Formata data para exibição
@@ -41,8 +50,13 @@ const formatarData = (data: string): string => {
       </div>
     </section>
 
+    <!-- Loading -->
+    <div v-if="isLoading" class="flex justify-center py-20">
+      <span class="loading loading-spinner loading-lg"></span>
+    </div>
+
     <!-- Lista de Notícias -->
-    <div class="container mx-auto px-4 py-12">
+    <div v-else class="container mx-auto px-4 py-12">
       <div v-if="noticias.length" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <RouterLink
           v-for="noticia in noticias"
@@ -67,8 +81,8 @@ const formatarData = (data: string): string => {
             <!-- Data -->
             <div class="flex items-center gap-2 text-sm text-base-content/70">
               <Icon icon="mdi:calendar" />
-              <time :datetime="noticia.dataPublicacao">
-                {{ formatarData(noticia.dataPublicacao) }}
+              <time :datetime="noticia.data_publicacao">
+                {{ formatarData(noticia.data_publicacao) }}
               </time>
             </div>
 

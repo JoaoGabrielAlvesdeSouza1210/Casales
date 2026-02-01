@@ -4,7 +4,7 @@ import type { Paroquia, Noticia, LiturgiaDiaria } from '@/types'
  * Dados mockados de uma paróquia católica
  */
 export const mockParoquia: Paroquia = {
-  id: '1',
+  id: 1,
   nome: 'Paróquia Nossa Senhora de Guadalupe',
   padroeiro: 'Nossa Senhora de Guadalupe',
   diocese: 'Diocese de São Paulo',
@@ -29,28 +29,28 @@ export const mockParoquia: Paroquia = {
   horariosMissa: [
     // Domingo
     {
-      id: '1',
+      id: 1,
       diaSemana: 'Domingo',
       horario: '07:00',
       tipo: 'Normal',
       observacao: 'Missa com Coro Infantil'
     },
     {
-      id: '2',
+      id: 2,
       diaSemana: 'Domingo',
       horario: '09:00',
       tipo: 'Normal',
       observacao: 'Missa com Coro Jovem'
     },
     {
-      id: '3',
+      id: 3,
       diaSemana: 'Domingo',
       horario: '11:00',
       tipo: 'Solene',
       observacao: 'Missa Solene com todos os coros'
     },
     {
-      id: '4',
+      id: 4,
       diaSemana: 'Domingo',
       horario: '19:00',
       tipo: 'Normal',
@@ -58,26 +58,26 @@ export const mockParoquia: Paroquia = {
     },
     // Segunda
     {
-      id: '5',
+      id: 5,
       diaSemana: 'Segunda',
       horario: '07:00',
       tipo: 'Normal'
     },
     {
-      id: '6',
+      id: 6,
       diaSemana: 'Segunda',
       horario: '19:00',
       tipo: 'Normal'
     },
     // Terça
     {
-      id: '7',
+      id: 7,
       diaSemana: 'Terça',
       horario: '07:00',
       tipo: 'Normal'
     },
     {
-      id: '8',
+      id: 8,
       diaSemana: 'Terça',
       horario: '19:00',
       tipo: 'Normal',
@@ -85,26 +85,26 @@ export const mockParoquia: Paroquia = {
     },
     // Quarta
     {
-      id: '9',
+      id: 9,
       diaSemana: 'Quarta',
       horario: '07:00',
       tipo: 'Normal'
     },
     {
-      id: '10',
+      id: 10,
       diaSemana: 'Quarta',
       horario: '19:00',
       tipo: 'Normal'
     },
     // Quinta
     {
-      id: '11',
+      id: 11,
       diaSemana: 'Quinta',
       horario: '07:00',
       tipo: 'Normal'
     },
     {
-      id: '12',
+      id: 12,
       diaSemana: 'Quinta',
       horario: '19:00',
       tipo: 'Normal',
@@ -112,13 +112,13 @@ export const mockParoquia: Paroquia = {
     },
     // Sexta
     {
-      id: '13',
+      id: 13,
       diaSemana: 'Sexta',
       horario: '07:00',
       tipo: 'Normal'
     },
     {
-      id: '14',
+      id: 14,
       diaSemana: 'Sexta',
       horario: '19:00',
       tipo: 'Normal',
@@ -126,13 +126,13 @@ export const mockParoquia: Paroquia = {
     },
     // Sábado
     {
-      id: '15',
+      id: 15,
       diaSemana: 'Sábado',
       horario: '08:00',
       tipo: 'Normal'
     },
     {
-      id: '16',
+      id: 16,
       diaSemana: 'Sábado',
       horario: '19:00',
       tipo: 'Normal',
@@ -141,7 +141,7 @@ export const mockParoquia: Paroquia = {
   ],
   eventosRecorrentes: [
     {
-      id: '1',
+      id: 1,
       titulo: 'Adoração ao Santíssimo',
       diaSemana: 'Terça-feira',
       frequencia: 'Semanal',
@@ -151,7 +151,7 @@ export const mockParoquia: Paroquia = {
       icone: 'mdi:church'
     },
     {
-      id: '2',
+      id: 2,
       titulo: 'Novena Perpétua',
       diaSemana: 'Quinta-feira',
       frequencia: 'Semanal',
@@ -161,7 +161,7 @@ export const mockParoquia: Paroquia = {
       icone: 'mdi:rosary'
     },
     {
-      id: '3',
+      id: 3,
       titulo: 'Grupo de Oração',
       diaSemana: 'Quarta-feira',
       frequencia: 'Semanal',
@@ -171,7 +171,7 @@ export const mockParoquia: Paroquia = {
       icone: 'mdi:account-group'
     },
     {
-      id: '4',
+      id: 4,
       titulo: 'Catequese Infantil',
       diaSemana: 'Sábado',
       frequencia: 'Semanal',
@@ -181,7 +181,7 @@ export const mockParoquia: Paroquia = {
       icone: 'mdi:human-child'
     },
     {
-      id: '5',
+      id: 5,
       titulo: 'Catequese de Crisma',
       diaSemana: 'Sábado',
       frequencia: 'Semanal',
@@ -191,7 +191,7 @@ export const mockParoquia: Paroquia = {
       icone: 'mdi:book-cross'
     },
     {
-      id: '6',
+      id: 6,
       titulo: 'Terço Mariano',
       frequencia: 'Diário',
       horario: '18:30',
@@ -202,7 +202,7 @@ export const mockParoquia: Paroquia = {
   ],
   pastorais: [
     {
-      id: '1',
+      id: 1,
       nome: 'Pastoral da Criança',
       descricao: 'Acompanhamento de gestantes e crianças de 0 a 6 anos, promovendo o desenvolvimento integral das crianças',
       coordenador: 'Maria Santos',
@@ -210,7 +210,7 @@ export const mockParoquia: Paroquia = {
       ativa: true
     },
     {
-      id: '2',
+      id: 2,
       nome: 'Pastoral da Juventude',
       descricao: 'Evangelização e formação humana e cristã dos jovens',
       coordenador: 'João Silva',
@@ -218,7 +218,7 @@ export const mockParoquia: Paroquia = {
       ativa: true
     },
     {
-      id: '3',
+      id: 3,
       nome: 'Pastoral Familiar',
       descricao: 'Apoio e orientação às famílias, preparação para o matrimônio',
       coordenador: 'José e Ana Costa',
@@ -226,7 +226,7 @@ export const mockParoquia: Paroquia = {
       ativa: true
     },
     {
-      id: '4',
+      id: 4,
       nome: 'Pastoral da Saúde',
       descricao: 'Visita a doentes e idosos, levando o conforto espiritual e material',
       coordenador: 'Dra. Teresa Lima',
@@ -234,7 +234,7 @@ export const mockParoquia: Paroquia = {
       ativa: true
     },
     {
-      id: '5',
+      id: 5,
       nome: 'Pastoral Social',
       descricao: 'Assistência aos necessitados, bazar solidário e distribuição de cestas básicas',
       coordenador: 'Carlos Almeida',
@@ -242,7 +242,7 @@ export const mockParoquia: Paroquia = {
       ativa: true
     },
     {
-      id: '6',
+      id: 6,
       nome: 'Pastoral Litúrgica',
       descricao: 'Organização e animação das celebrações litúrgicas',
       coordenador: 'Pe. Francisco',
@@ -250,7 +250,7 @@ export const mockParoquia: Paroquia = {
       ativa: true
     },
     {
-      id: '7',
+      id: 7,
       nome: 'Pastoral da Comunicação',
       descricao: 'Divulgação das atividades paroquiais através das redes sociais e mídias',
       coordenador: 'Lucas Ferreira',
@@ -258,7 +258,7 @@ export const mockParoquia: Paroquia = {
       ativa: true
     },
     {
-      id: '8',
+      id: 8,
       nome: 'Ministério de Música',
       descricao: 'Animação musical das celebrações litúrgicas',
       coordenador: 'Maestro Pedro',
@@ -274,7 +274,7 @@ export const mockParoquia: Paroquia = {
  */
 export const mockNoticias: Noticia[] = [
   {
-    id: '1',
+    id: 1,
     titulo: 'Festa de Nossa Senhora de Guadalupe',
     resumo: 'Celebrações especiais em honra à padroeira da paróquia nos dias 9 a 12 de dezembro',
     conteudo: `
@@ -293,12 +293,12 @@ export const mockNoticias: Noticia[] = [
     `,
     dataPublicacao: '2024-11-20T10:00:00Z',
     autor: 'Equipe Paroquial',
-    categorias: ['Festas'],
+    categoria: 'Festas',
     destaque: true,
     imagem: '/images/festa-guadalupe.jpg'
   },
   {
-    id: '2',
+    id: 2,
     titulo: 'Inscrições Abertas para Catequese 2024',
     resumo: 'Abertas as inscrições para Catequese de Primeira Eucaristia e Crisma',
     conteudo: `
@@ -330,12 +330,12 @@ export const mockNoticias: Noticia[] = [
     `,
     dataPublicacao: '2024-11-18T14:00:00Z',
     autor: 'Coordenação de Catequese',
-    categorias: ['Catequese'],
+    categoria: 'Catequese',
     destaque: true,
     imagem: '/images/catequese.jpg'
   },
   {
-    id: '3',
+    id: 3,
     titulo: 'Campanha do Agasalho 2024',
     resumo: 'Paróquia realiza campanha de arrecadação de roupas e cobertores para o inverno',
     conteudo: `
@@ -357,12 +357,12 @@ export const mockNoticias: Noticia[] = [
     `,
     dataPublicacao: '2024-11-15T09:00:00Z',
     autor: 'Pastoral Social',
-    categorias: ['Campanhas'],
+    categoria: 'Campanhas',
     destaque: true,
     imagem: '/images/campanha-agasalho.jpg'
   },
   {
-    id: '4',
+    id: 4,
     titulo: 'Retiro Espiritual para Jovens',
     resumo: 'Pastoral da Juventude organiza retiro de Carnaval com o tema "Jovem, Levanta-te!"',
     conteudo: `
@@ -388,12 +388,12 @@ export const mockNoticias: Noticia[] = [
     `,
     dataPublicacao: '2024-11-10T16:00:00Z',
     autor: 'Pastoral da Juventude',
-    categorias: ['Eventos'],
+    categoria: 'Eventos',
     destaque: false,
     imagem: '/images/retiro-jovens.jpg'
   },
   {
-    id: '5',
+    id: 5,
     titulo: 'Formação para Ministros Extraordinários',
     resumo: 'Curso de formação para novos Ministros Extraordinários da Comunhão Eucarística',
     conteudo: `
@@ -418,7 +418,7 @@ export const mockNoticias: Noticia[] = [
     `,
     dataPublicacao: '2024-11-05T11:00:00Z',
     autor: 'Pároco',
-    categorias: ['Formação'],
+    categoria: 'Formação',
     destaque: false,
     imagem: '/images/ministros.jpg'
   }

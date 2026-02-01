@@ -2,7 +2,6 @@
 import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import { useParoquiaStore } from './stores/paroquia'
-import DefaultLayout from './layouts/DefaultLayout.vue'
 
 const paroquiaStore = useParoquiaStore()
 
@@ -18,7 +17,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  <DefaultLayout>
-    <RouterView />
-  </DefaultLayout>
+  <RouterView />
 </template>

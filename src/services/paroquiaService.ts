@@ -79,7 +79,7 @@ export const buscarNoticias = async (paroquiaId: string): Promise<Noticia[]> => 
  * @param id - ID da notícia
  * @returns Promise com a notícia mockada
  */
-export const buscarNoticia = async (id: string): Promise<Noticia> => {
+export const buscarNoticia = async (id: number): Promise<Noticia> => {
   // Simula delay de API
   await new Promise(resolve => setTimeout(resolve, 500))
   const noticia = mockNoticias.find(n => n.id === id)

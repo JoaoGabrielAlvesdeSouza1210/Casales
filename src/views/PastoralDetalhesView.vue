@@ -23,7 +23,7 @@ const pastoralId = computed(() => route.params.id as string)
  * Pastoral atual
  */
 const pastoral = computed(() => {
-  return paroquiaStore.paroquia?.pastorais?.find(p => p.id === pastoralId.value)
+  return paroquiaStore.paroquia?.pastorais?.find(p => p.id === Number(pastoralId.value))
 })
 
 onMounted(() => {

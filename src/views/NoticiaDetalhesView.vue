@@ -1,33 +1,28 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
-import { useParoquiaStore } from '@/stores/paroquia'
 import { Icon } from '@iconify/vue'
+import { noticiaService } from '@/services/noticiaService'
+import type { Noticia } from '@/types/noticia'
 import dayjs from 'dayjs'
 import 'dayjs/locale/pt-br'
 
 dayjs.locale('pt-br')
 
-/**
- * Route atual
- */
 const route = useRoute()
+const noticia = ref<Noticia | null>(null)
+const isLoading = ref(true)
 
-/**
- * Store da paróquia
- */
-const paroquiaStore = useParoquiaStore()
+const noticiaId = computed(() => Number(route.params.id))
 
-/**
- * ID da notícia
- */
-const noticiaId = computed(() => route.params.id as string)
-
-/**
- * Notícia atual
- */
-const noticia = computed(() => {
-  return paroquiaStore.noticias?.find(n => n.id === noticiaId.value)
+onMounted(async () => {
+  try {
+    noticia.value = await noticiaService.getById(noticiaId.value)
+  } catch (error) {
+    console.error('Erro ao carregar notícia:', error)
+  } finally {
+    isLoading.value = false
+  }
 })
 
 /**
@@ -38,10 +33,6 @@ const noticia = computed(() => {
 const formatarData = (data: string): string => {
   return dayjs(data).format('dddd, DD [de] MMMM [de] YYYY')
 }
-
-onMounted(() => {
-  // Carregar notícia se necessário
-})
 </script>
 
 <template>
@@ -74,8 +65,8 @@ onMounted(() => {
           <div class="flex items-center gap-4 text-sm text-base-content/70 mb-4">
             <div class="flex items-center gap-2">
               <Icon icon="mdi:calendar" />
-              <time :datetime="noticia.dataPublicacao" class="capitalize">
-                {{ formatarData(noticia.dataPublicacao) }}
+              <time :datetime="noticia.data_publicacao" class="capitalize">
+                {{ formatarData(noticia.data_publicacao) }}
               </time>
             </div>
             <div v-if="noticia.autor" class="flex items-center gap-2">
@@ -126,10 +117,23 @@ onMounted(() => {
     </div>
 
     <!-- Loading State -->
-    <div v-else class="container mx-auto px-4 py-16">
+    <div v-else-if="isLoading" class="container mx-auto px-4 py-16">
       <div class="flex flex-col items-center justify-center">
         <span class="loading loading-spinner loading-lg"></span>
         <p class="mt-4 text-lg">Carregando notícia...</p>
+      </div>
+    </div>
+
+    <!-- Not Found State -->
+    <div v-else class="container mx-auto px-4 py-16">
+      <div class="flex flex-col items-center justify-center">
+        <Icon icon="mdi:alert-circle" class="text-6xl text-error mb-4" />
+        <h2 class="text-2xl font-bold mb-2">Notícia não encontrada</h2>
+        <p class="text-base-content/60 mb-6">A notícia que você procura não existe ou foi removida.</p>
+        <RouterLink to="/noticias" class="btn btn-primary">
+          <Icon icon="mdi:arrow-left" />
+          Voltar para Notícias
+        </RouterLink>
       </div>
     </div>
   </div>

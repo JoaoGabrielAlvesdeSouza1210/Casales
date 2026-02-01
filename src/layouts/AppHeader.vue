@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { useParoquiaStore } from '@/stores/paroquia'
+import { ref } from 'vue'
 import { Icon } from '@iconify/vue'
-
-const paroquiaStore = useParoquiaStore()
-const paroquia = computed(() => paroquiaStore.paroquia)
 
 const mobileMenuOpen = ref(false)
 
@@ -29,6 +25,7 @@ const closeMobileMenu = () => {
           <li><RouterLink to="/sobre" @click="closeMobileMenu"><Icon icon="mdi:information-outline" class="text-xl" />Sobre</RouterLink></li>
           <li><RouterLink to="/horarios-missas" @click="closeMobileMenu"><Icon icon="mdi:clock-outline" class="text-xl" />Horários das Missas</RouterLink></li>
           <li><RouterLink to="/liturgia-diaria" @click="closeMobileMenu"><Icon icon="mdi:book-open-variant" class="text-xl" />Liturgia Diária</RouterLink></li>
+          <li><RouterLink to="/intencoes-missa" @click="closeMobileMenu"><Icon icon="mdi:candle" class="text-xl" />Intenções de Missa</RouterLink></li>
           <li><RouterLink to="/pastorais" @click="closeMobileMenu"><Icon icon="mdi:account-group" class="text-xl" />Pastorais</RouterLink></li>
           <li><RouterLink to="/noticias" @click="closeMobileMenu"><Icon icon="mdi:newspaper-variant-outline" class="text-xl" />Notícias</RouterLink></li>
           <li><RouterLink to="/localizacao" @click="closeMobileMenu"><Icon icon="mdi:map-marker-outline" class="text-xl" />Localização</RouterLink></li>
@@ -38,10 +35,10 @@ const closeMobileMenu = () => {
         <Icon icon="mdi:church" class="text-4xl text-primary" />
         <div class="flex flex-col items-start">
           <span class="text-base font-bold text-primary hidden md:block">
-            {{ paroquia?.nome || 'Paróquia' }}
+            Paróquia
           </span>
-          <span v-if="paroquia?.padroeiro" class="text-xs text-base-content/70 hidden md:block">
-            {{ paroquia.padroeiro }}
+          <span class="text-xs text-base-content/70 hidden md:block">
+            Nossa Senhora de Guadalupe
           </span>
         </div>
       </RouterLink>
@@ -53,6 +50,7 @@ const closeMobileMenu = () => {
         <li><RouterLink to="/sobre" class="gap-2"><Icon icon="mdi:information-outline" class="text-xl" />Sobre</RouterLink></li>
         <li><RouterLink to="/horarios-missas" class="gap-2"><Icon icon="mdi:clock-outline" class="text-xl" />Horários</RouterLink></li>
         <li><RouterLink to="/liturgia-diaria" class="gap-2"><Icon icon="mdi:book-open-variant" class="text-xl" />Liturgia</RouterLink></li>
+        <li><RouterLink to="/intencoes-missa" class="gap-2"><Icon icon="mdi:candle" class="text-xl" />Intenções</RouterLink></li>
         <li><RouterLink to="/pastorais" class="gap-2"><Icon icon="mdi:account-group" class="text-xl" />Pastorais</RouterLink></li>
         <li><RouterLink to="/noticias" class="gap-2"><Icon icon="mdi:newspaper-variant-outline" class="text-xl" />Notícias</RouterLink></li>
         <li><RouterLink to="/localizacao" class="gap-2"><Icon icon="mdi:map-marker-outline" class="text-xl" />Localização</RouterLink></li>

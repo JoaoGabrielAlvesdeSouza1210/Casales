@@ -29,7 +29,7 @@ export interface RedesSociais {
  * Interface para horários de missas
  */
 export interface HorarioMissa {
-  id: string
+  id: number
   diaSemana: string
   horario: string
   tipo: 'Normal' | 'Solene' | 'Especial'
@@ -40,7 +40,7 @@ export interface HorarioMissa {
  * Interface para eventos recorrentes
  */
 export interface EventoRecorrente {
-  id: string
+  id: number
   titulo: string
   descricao: string
   diaSemana?: string
@@ -54,7 +54,8 @@ export interface EventoRecorrente {
  * Interface para pastoral
  */
 export interface Pastoral {
-  id: string
+  paroquia_id: string
+  id: number
   nome: string
   descricao: string
   coordenador?: string
@@ -66,21 +67,6 @@ export interface Pastoral {
   objetivos?: string
   atividades?: string[]
   ativa: boolean
-}
-
-/**
- * Interface para notícia
- */
-export interface Noticia {
-  id: string
-  titulo: string
-  resumo: string
-  conteudo: string
-  imagem?: string
-  autor: string
-  dataPublicacao: string
-  categorias: string[]
-  destaque: boolean
 }
 
 /**
@@ -150,13 +136,31 @@ export interface InscricaoPastoral {
  * Interface principal da paróquia
  */
 export interface Paroquia {
-  id: string
+  id: number
   nome: string
   descricao: string
   historia?: string
   padroeiro: string
   dioceseId?: string
   diocese?: string
+  // Campos de contato
+  telefone?: string
+  email?: string
+  // Campos de endereço (além do objeto localizacao)
+  endereco?: string
+  bairro?: string
+  cidade?: string
+  estado?: string
+  cep?: string
+  // Coordenadas
+  latitude?: number
+  longitude?: number
+  // Redes sociais
+  site?: string
+  facebook?: string
+  instagram?: string
+  youtube?: string
+  // Objetos relacionados
   localizacao: Localizacao
   redesSociais: RedesSociais
   horariosMissa: HorarioMissa[]
