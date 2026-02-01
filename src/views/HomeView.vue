@@ -281,7 +281,7 @@ const formatarData = (data: string): string => dayjs(data).format('DD/MM/YYYY')
             <div class="card-body">
               <div class="badge badge-ghost gap-2">
                 <Icon icon="mdi:calendar" />
-                <span>{{ formatarData(noticia.dataPublicacao) }}</span>
+                <span>{{ formatarData(noticia.data_publicacao) }}</span>
               </div>
               <h3 class="card-title text-primary group-hover:text-accent transition-colors">{{ noticia.titulo }}</h3>
               <p class="text-base-content/70 line-clamp-3">{{ noticia.resumo }}</p>
