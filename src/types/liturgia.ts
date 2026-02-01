@@ -1,6 +1,3 @@
-/**
- * Interface para leitura da liturgia
- */
 export interface Leitura {
   referencia: string
   titulo: string

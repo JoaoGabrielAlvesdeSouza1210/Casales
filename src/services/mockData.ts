@@ -203,6 +203,7 @@ export const mockParoquia: Paroquia = {
   pastorais: [
     {
       id: 1,
+      paroquia_id: '1',
       nome: 'Pastoral da Criança',
       descricao: 'Acompanhamento de gestantes e crianças de 0 a 6 anos, promovendo o desenvolvimento integral das crianças',
       coordenador: 'Maria Santos',
@@ -211,6 +212,7 @@ export const mockParoquia: Paroquia = {
     },
     {
       id: 2,
+      paroquia_id: '2',
       nome: 'Pastoral da Juventude',
       descricao: 'Evangelização e formação humana e cristã dos jovens',
       coordenador: 'João Silva',
@@ -219,6 +221,7 @@ export const mockParoquia: Paroquia = {
     },
     {
       id: 3,
+      paroquia_id: '3',
       nome: 'Pastoral Familiar',
       descricao: 'Apoio e orientação às famílias, preparação para o matrimônio',
       coordenador: 'José e Ana Costa',
@@ -227,6 +230,7 @@ export const mockParoquia: Paroquia = {
     },
     {
       id: 4,
+      paroquia_id: '4',
       nome: 'Pastoral da Saúde',
       descricao: 'Visita a doentes e idosos, levando o conforto espiritual e material',
       coordenador: 'Dra. Teresa Lima',
@@ -235,6 +239,7 @@ export const mockParoquia: Paroquia = {
     },
     {
       id: 5,
+      paroquia_id: '5',
       nome: 'Pastoral Social',
       descricao: 'Assistência aos necessitados, bazar solidário e distribuição de cestas básicas',
       coordenador: 'Carlos Almeida',
@@ -243,6 +248,7 @@ export const mockParoquia: Paroquia = {
     },
     {
       id: 6,
+      paroquia_id: '6',
       nome: 'Pastoral Litúrgica',
       descricao: 'Organização e animação das celebrações litúrgicas',
       coordenador: 'Pe. Francisco',
@@ -251,6 +257,7 @@ export const mockParoquia: Paroquia = {
     },
     {
       id: 7,
+      paroquia_id: '7',
       nome: 'Pastoral da Comunicação',
       descricao: 'Divulgação das atividades paroquiais através das redes sociais e mídias',
       coordenador: 'Lucas Ferreira',
@@ -259,6 +266,7 @@ export const mockParoquia: Paroquia = {
     },
     {
       id: 8,
+      paroquia_id: '8',
       nome: 'Ministério de Música',
       descricao: 'Animação musical das celebrações litúrgicas',
       coordenador: 'Maestro Pedro',
@@ -291,7 +299,7 @@ export const mockNoticias: Noticia[] = [
       <p>Haverá leilão beneficente, barraquinhas de comidas típicas e apresentações culturais.</p>
       <p>Todos estão convidados a participar!</p>
     `,
-    dataPublicacao: '2024-11-20T10:00:00Z',
+    data_publicacao: '2024-11-20T10:00:00Z',
     autor: 'Equipe Paroquial',
     categoria: 'Festas',
     destaque: true,
@@ -328,7 +336,7 @@ export const mockNoticias: Noticia[] = [
       
       <p>Inscrições na secretaria paroquial até 15 de janeiro.</p>
     `,
-    dataPublicacao: '2024-11-18T14:00:00Z',
+    data_publicacao: '2024-11-18T14:00:00Z',
     autor: 'Coordenação de Catequese',
     categoria: 'Catequese',
     destaque: true,
@@ -355,7 +363,7 @@ export const mockNoticias: Noticia[] = [
       
       <p>Sua solidariedade aquece corações! 💙</p>
     `,
-    dataPublicacao: '2024-11-15T09:00:00Z',
+    data_publicacao: '2024-11-15T09:00:00Z',
     autor: 'Pastoral Social',
     categoria: 'Campanhas',
     destaque: true,
@@ -386,7 +394,7 @@ export const mockNoticias: Noticia[] = [
       
       <p>Inscrições limitadas! Garanta sua vaga na secretaria.</p>
     `,
-    dataPublicacao: '2024-11-10T16:00:00Z',
+    data_publicacao: '2024-11-10T16:00:00Z',
     autor: 'Pastoral da Juventude',
     categoria: 'Eventos',
     destaque: false,
@@ -416,7 +424,7 @@ export const mockNoticias: Noticia[] = [
       
       <p>Procure o Pe. Francisco para mais informações.</p>
     `,
-    dataPublicacao: '2024-11-05T11:00:00Z',
+    data_publicacao: '2024-11-05T11:00:00Z',
     autor: 'Pároco',
     categoria: 'Formação',
     destaque: false,

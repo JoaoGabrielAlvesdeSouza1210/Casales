@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { LiturgiaDiaria } from '@/types'
-import { buscarLiturgiaDiaria } from '@/services/liturgiaService'
+import { liturgiaService } from '@/services/liturgiaService'
+import type { Liturgia } from '@/services/liturgiaService'
 import dayjs from 'dayjs'
 
 /**
@@ -9,7 +9,7 @@ import dayjs from 'dayjs'
  */
 export const useLiturgiaStore = defineStore('liturgia', () => {
   // Estado
-  const liturgia = ref<LiturgiaDiaria | null>(null)
+  const liturgia = ref<Liturgia | null>(null)
   const loading = ref<boolean>(false)
   const error = ref<string | null>(null)
   const dataAtual = ref<string>(dayjs().format('YYYY-MM-DD'))
@@ -24,7 +24,8 @@ export const useLiturgiaStore = defineStore('liturgia', () => {
     error.value = null
     try {
       const dataConsulta = data || dataAtual.value
-      liturgia.value = await buscarLiturgiaDiaria(dataConsulta)
+      const [ano, mes, dia] = dataConsulta.split('-').map(Number)
+      liturgia.value = await liturgiaService.buscarLiturgiaPorData(dia, mes, ano)
       dataAtual.value = dataConsulta
     } catch (err) {
       error.value = 'Erro ao carregar liturgia diária'

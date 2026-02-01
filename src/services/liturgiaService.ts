@@ -56,7 +56,17 @@ export const liturgiaService = {
    * @param mes - Mês (1-12)
    * @param ano - Ano (opcional, padrão ano atual)
    */
-  async buscarLiturgiaPorData(dia: number, mes: number, ano?: number): Promise<Liturgia> {
+  async buscarLiturgiaPorData(dia: number | undefined, mes: number | undefined, ano?: number | undefined): Promise<Liturgia> {
+    const hoje = new Date()
+    if (!dia) {
+      dia = hoje.getDate()
+    }
+    if (!mes) {
+      mes = hoje.getMonth() + 1
+    }
+    if (!ano) {
+      ano = hoje.getFullYear()
+    }
     const params: any = { dia, mes }
     if (ano) {
       params.ano = ano
